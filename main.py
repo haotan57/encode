@@ -1,17 +1,14 @@
 def encode(phrase):
-    pass
+    encoded_phrase = ""
+    if len(phrase) == 8:
+        for i in phrase:
+            encoded_phrase += str((int(i) + 3) % 10)
+    return encoded_phrase
+
 
 def decode(phrase):
-    string = ''
-    new_num = ''
-    for num in phrase:
-        if num <= 3:
-            new_num = str(0 - (num-3))
-            string += new_num
-        else:
-            new_num = str(num - 3)
-            string += new_num
-    return string
+    return phrase
+
 
 def main():
     # looping menu
@@ -31,3 +28,5 @@ def main():
             print('Encoded phrase is', encode(phrase))
         elif option == '3':
             print('Decoded phrase is', decode(phrase))
+
+main()
